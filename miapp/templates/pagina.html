@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+{% load filters %}
+
+{% block title %}Integradora II{% endblock %}
+
+{% block content %}
+<h1 class="title">Página de pruebas</h1>
+<p>{{'by CODECRAFTERS'}}</p>
+
+
+{{"CODECARFTERS"|saludo|safe}}
+{% endblock %}

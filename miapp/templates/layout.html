@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <title>
+        {% block title %}
+        {% endblock %} 
+        | CODECARFTERS
+        
+    </title>
+    
+    {% load static %}
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+    <header>
+        <div id="logotipo">
+            <img src="{% static 'images/craftersLogo.png' %}">
+
+            <h1>Happy healt</h1>
+
+        </div>
+    </header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="{% url "index" %}">Inicio</a>
+                </li>
+                <li>
+                    <a href="{% url 'hola_mundo' %}">¿Quienes somos?</a>
+                </li>
+                <li>
+                    <a href="{% url 'articulos' %}">Comentarios</a>
+                </li>
+                <li>
+                    <a href="{% url 'create' %}">Crear artículo</a>
+                </li>
+                <li>
+                    <a href="{% url 'create_full' %}">Escribenos un comentario</a>
+                </li>
+                <li>
+                    <a href="{% url 'pagina'%}">Página de pruebas</a>
+                </li>
+                <li>
+                    <a href="{% url 'contacto' 'CODECARFTERS' %}">Contacto</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="barra">
+            <span class="esquina-izquierda"></span>
+            <span class="relleno-barra"></span>
+            <span class="esquina-derecha"></span>
+        </div>
+
+    
+    <div id="content">
+        <div class="box">
+        {% block content %}
+        <strong>CODECARFTERS</strong>
+        {% endblock %}
+        </div>
+                
+    </div>
+    
+    <footer class="py-5 mt-5 bg-light text-center">
+        Copyright &copy; 2024 - CodeCrafters - {% now "d/m/y" %}
+    </footer>
+
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% load filters %}
+
+{% block title %}Integradora II{% endblock %}
+
+{% block content %}
+<h1 class="title">Formularios en Django</h1>
+
+{% if form.errors %}
+    <strong class="rojo">
+        ¡Error! Por favor, corregir el/los errores:
+    </strong>
+{% endif %}
+
+<form action =""  method = "POST" >
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+    <input type="submit" value="Guardar">
+</form>
+{% endblock %}
